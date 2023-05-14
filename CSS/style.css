@@ -1,0 +1,286 @@
+body {
+    background-color: brown;
+    font-family: 'Roboto';
+    font-style: normal;
+    color: black;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+h3 { 
+    font-size: 18px;
+    font-weight: 900;
+
+}
+
+h4 { 
+    font-size: 12px;
+    font-weight: 500;
+    padding-bottom: 24px;
+}
+
+
+.container {
+    background-color: white;
+    margin: 0 auto;
+    padding-left: 16px; /* Cчитать от размера экрана*/
+    padding-right: 16px; /* Cчитать от размера экрана*/
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header > img {
+    padding-top: calc(3vw + 12px); /* Cчитать от размера экрана*/
+    height: auto;
+    max-width: calc(45vw + 8px);/* Cчитать от размера экрана*/
+    vertical-align: bottom;
+}
+
+.header > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+}
+
+.logo p {
+    text-align: center;
+    vertical-align: auto;
+    font-size: calc(1vw + 8px);  /* Cчитать от размера экрана Может быть*/
+}
+.logo :last-child {
+    text-align: center;
+    vertical-align: auto;
+    color: rgb(24, 58, 97);
+    /* Cчитать от размера экрана Посчитаноpadding-left: calc(5vw + 8px); */
+    padding-right: calc(5vw + 8px);/* Cчитать от размера экрана Посчитано*/
+    line-height: 130%;
+    font-weight: 900;
+
+}
+
+.logo p img{
+    height: calc(15vw + 4px); /* Cчитать от размера экрана */
+    margin-top: calc(1vw + 2px); /* Cчитать от размера экрана */
+    margin-bottom: calc(1vw + 2px); /* Cчитать от размера экрана */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; 
+    background-color: red;
+    border: none;
+}
+
+nav li{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 2.1vw;
+    padding-right: 2.1vw;
+
+    background-color: red;
+    border: 2px solid rgb(170, 0, 0);
+}
+
+nav li:hover {
+    background-color: rgb(170, 0, 0);
+}
+
+nav li a {
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+main > section{
+    padding-left: 28px;
+    padding-right: 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    column-gap: 16px;
+    }
+
+section#about {
+    grid-template-areas: 
+    "header header header header"
+    "ItemText ItemText ItemFotoBig ItemFotoBig"
+    "footer footer footer footer";
+}
+
+section.director {
+    grid-template-areas: 
+    "header header header header"
+    "ItemFoto ItemText ItemText ItemText"
+    "footer footer footer footer";
+}
+
+section.manager {
+    grid-template-areas: 
+    "header header header header"
+    "ItemFoto1 ItemFoto2 ItemFoto3 ItemFoto4"
+    "footer footer footer footer";
+}
+
+section header { 
+    grid-area: header;
+    justify-self: start; 
+    align-self: center;
+    padding-top: 32px; /* Cчитать от размера экрана*/
+    padding-bottom: 32px; /* Cчитать от размера экрана*/
+}
+
+section footer { 
+    grid-area: footer;
+    width: 100%;
+    justify-self: start; 
+    align-self: center;
+    border-bottom: 4px dotted grey;
+    padding-top: 32px; /* Cчитать от размера экрана*/
+    margin-bottom: 32px; /* Cчитать от размера экрана*/
+
+}
+
+section.school button{
+    color: white;
+    grid-column: span 2;    
+    padding-top: 32px;
+    padding-bottom: 32px;
+    border: none;
+}
+section.school button:nth-child(1){
+    background: rgb(255, 0, 0);
+}
+section.school button:nth-child(2){
+    background: rgb(24, 20, 255);
+}
+
+
+section.manager footer {
+    border-bottom: 4px solid palevioletred;
+}
+
+.ItemText {
+    grid-area: ItemText;
+    text-align:justify;
+    font-size: 16px;
+}
+
+.ItemFotoBig { 
+    grid-area: ItemFotoBig;
+}
+
+.ItemFotoBig img{
+    width: 100%;
+}
+
+.ItemFoto {
+    grid-area: ItemFoto;
+}
+
+.ItemFoto img{
+    width: 100%;
+}
+
+.ItemText{
+    padding-right: 32px; /* Cчитать от размера экрана*/
+}
+
+.director div.ItemText {
+    margin-left: 32px; /* Cчитать от размера экрана*/
+}
+.manager div{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.manager div > img {
+    max-width: 70%;
+    }
+
+
+/*Устройства XX-Large  1440px;*/
+@media screen and (min-width: 1439.99px) 
+{
+    h2 { font-size: 2.23vw;}
+    h3 {font-size: 1.25vw; }
+    h4 { font-size: 0.83vw;}
+
+    .container {
+        min-width: 1400px;
+        max-width: calc(95vw - 32px); /* Cчитать от размера экрана Может быть*/
+    }
+
+    .logo p {
+        font-size: calc(1.6vw); /* Cчитать от размера экрана Может быть*/
+    }
+
+    nav li a {
+        font-size: 1.5vw;
+    }
+
+    section .ItemText {
+        font-size: 1.12vw;
+    }
+
+}
+
+@media screen and (max-width: 1439.99px) 
+{
+    .container {
+        max-width: 90vw; /* Cчитать от размера экрана Может быть*/
+    }
+
+}
+
+
+
+
+
+/*Устройства X-Small (портретные телефоны, менее 576 пикселей)
+@media screen and (max-width: 575.98px) 
+{ 
+    .container {
+        max-width: calc(95vw - 32px); /* Cчитать от размера экрана Может быть
+    }
+
+    .header {
+        display: block;
+        border: 2px solid red;
+    }
+}
+*/
+/*
+/* Экраны для адаптива */
+/*
+Идеальный вариант адаптивной вёрстки на 2021 год:
+
+360pх до 640px растягивающийся, минус отступы по 10 - 15 пикселей с боков
+768px
+1000px -> 1024x (минус 24 пикселя на скролл браузера = 1000px для дизайна, отступы по желанию (пункты ниже так же)).
+1342px -> 1366x
+1512px -> 1536x по желанию, чтоб накрыть 1600x и чуть большие расширения, около 10% устройств.
+1896px -> 1920x
+
+// Устройства X-Small (портретные телефоны, менее 576 пикселей)
+@media (max-width: 575.98px) { ... }
+
+// Устройства Small (телефоны с горизонтальной ориентацией, менее 768 пикселей)
+@media (max-width: 767.98px) { ... }
+
+// Устройства Medium (планшеты, менее 992 пикселей)
+@media (max-width: 991.98px) { ... }
+
+// Устройства Large (настольные компьютеры, менее 1200 пикселей)
+@media (max-width: 1199.98px) { ... }
